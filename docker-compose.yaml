@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+
+  products:
+    image: assignment/products-service
+    container_name: products-service
+    build:
+      context: products-service
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+
+  payments:
+    image: assignment/payment-service
+    container_name: payment-service
+    build:
+      context: payments-service
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+
+  checkout:
+    image: assignmentp/checkout-service
+    container_name: checkout-service
+    build:
+      context: checkout-service
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
